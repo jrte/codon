@@ -1,0 +1,10 @@
+# definitions for basic schema elements
+
+zero = '0';
+negative = '-';
+nonzero = (digit - zero) digit*;
+unsigned = zero | nonzero;
+signed = negative nonzero;
+jint = signed | unsigned;
+jreal = negative? (nonzero '.' digit* | '0.' digit+ ({'e','E'} {'+','-'} unsigned)?);
+jnumber = jinteger | jreal;
